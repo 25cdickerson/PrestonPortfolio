@@ -3618,6 +3618,18 @@ form textarea{
     transition: color .3s ease-in, background-color .3s ease-in, border-color .3s ease-in
 }
 
+@media only screen and (max-width: 950px) {
+	#contact form{
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	#contact form{
+		width: 70%;
+	}
+}
+
 .user-projects {
     margin: 20px auto
 }
