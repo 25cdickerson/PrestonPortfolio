@@ -435,14 +435,16 @@
 		  </div>
 	  </div>
     </section>
-
-    <footer class="footer">
-	  <p>Preston Dickerson | 2022</p>
-	  <p>Contact Me:</p>
-	  <p>Email: preston.dickerson@centre.edu</p>
-	  <p>Phone: (317)-645-3951</p>
-    </footer>
-
+	<br>
+	<section id = "contact">
+		<h1>Contact Me</h1>
+		<form id = "form">
+		  <input type="text" id="name" name="name" placeholder = "name"><br>
+		  <input type="text" id="email" name="email" placeholder = "email"><br>
+		  <textarea type="text" id="content" name="content" placeholder = "message"></textarea><br>
+		  <input type="button" id="submit" name="submit" value = "Submit">
+		</form>
+	</section>
     <!-- Import JS: Particles Theme -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- Import JS: Sweet Scroll -->
@@ -451,5 +453,63 @@
     <script src="./assets/js/google-analytics.js"></script>
     <!-- Import JS: Main Script -->
     <script src="./assets/js/main.js"></script>
+	<!--Import JS: Email Libraries -->
+	<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+	</script>
+	<script type="text/javascript">
+	   (function(){
+		  emailjs.init("-zPQKJYeI5gnCQNNG");
+	   })();
+	   
+	   // Use Emailjs to send emails
+	   function validate() {
+			let name = document.querySelector("#name");
+			let email = document.querySelector("#email");
+			let msg = document.querySelector("#content");
+			let btn = document.querySelector("#submit");
+
+			btn.addEventListener("click", (e) => {
+			  e.preventDefault();
+			  if (name.value == "" || email.value == "" || msg.value == "") {
+				emptyerror();
+			  } else {
+				loader.style.display = "flex";
+				sendmail(name.value, email.value, msg.value);
+				success();
+				loader.style.display = "none";
+			  }
+			});
+		  }
+
+		  function sendmail(name, email, msg) {
+			emailjs.send("service_pbj3lvf", "template_mo4ilna", {
+			  to_name: "Preston",
+			  from_name: email,
+			  message: msg,
+			});
+		  }
+
+		  function emptyerror() {
+			alert("Fields cannot be empty!");
+		  }
+
+		  function error() {
+			  alert("Something went wrong!");
+		  }
+
+		  function success() {
+			  alert("Successfully sent message");
+		  }
+		
+		  validate();
+	</script>
+	  
   </body>
+  <footer class="footer">
+	  <p>Preston Dickerson | 2022</p>
+	  <p>Contact Me:</p>
+	  <p>Email: preston.dickerson@centre.edu</p>
+	  <p>Phone: (317)-645-3951</p>
+    </footer>
 </html>
