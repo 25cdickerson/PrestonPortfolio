@@ -3626,9 +3626,7 @@ form textarea{
 
 @media only screen and (max-width: 550px) {
 	#contact form{
-		width: 70%;
-		display: block;
-		margin: auto;
+		width: 	70%;
 	}
 }
 
