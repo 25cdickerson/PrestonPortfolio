@@ -3627,6 +3627,7 @@ form textarea{
 @media only screen and (max-width: 550px) {
 	#contact form{
 		width: 	70%;
+		transform: translateX(-15px);
 	}
 }
 
