@@ -3543,6 +3543,16 @@ a img {
 	width: 100%;
 }
 
+@media only screen and (max-width: 1050px) {
+	.frontend{
+		width: 100%;
+	}
+	
+	.backend{
+		width: 100%;
+	}
+}
+
 .tools p{
 	width: 50%;
 	display: block;
