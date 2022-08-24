@@ -3551,6 +3551,10 @@ a img {
 	.backend{
 		width: 100%;
 	}
+	
+	.tools p{
+		width: 100%;
+	}
 }
 
 .tools p{
