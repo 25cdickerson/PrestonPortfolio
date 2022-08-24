@@ -3527,6 +3527,28 @@ a img {
     margin: 10px
 }
 
+.frontend{
+	float: left;
+	width: 47%;
+	margin-right: 20px;
+}
+
+.backend{
+	float: left;
+	width: 47%;
+}
+
+.tools{
+	float: center;
+	width: 100%;
+}
+
+.tools p{
+	width: 50%;
+	display: block;
+	margin: auto;
+}
+
 .user {
     text-align: center;
     font-size: 60px;
